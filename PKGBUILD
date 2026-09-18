@@ -4,7 +4,7 @@
 ###
 pkgname=lemonade-server
 pkgdesc="Lemonade: Local LLM Serving with GPU and NPU acceleration (Server)"
-pkgver=2026.39rc
+pkgver=2026.39.1rc
 pkgrel=1
 arch=('x86_64')
 url='https://github.com/lemonade-sdk/lemonade/'
@@ -12,16 +12,12 @@ license=('Apache-2.0')
 makedepends=('cmake' 'ninja' 'git' 'cli11' 'nlohmann-json' 'libdrm' 'nodejs' 'npm')
 depends=('zstd' 'unzip' 'curl' 'mbedtls' 'libwebsockets')
 provides=('lemonade-server')
-backup=('etc/lemonade/conf.d/zz-secrets.conf')
+backup=('etc/default/lemond')
 _httplibver=0.56.0
 _cores=8
 
 source=(
 "${pkgname}::git+https://github.com/lemonade-sdk/lemonade#branch=release-v2026.39"
-# "${pkgname}::git+https://github.com/lemonade-sdk/lemonade#branch=superm1/fix-migration"
-# "${pkgname}::git+https://github.com/lemonade-sdk/lemonade#branch=fix/example"
-# "${pkgname}::git+https://github.com/lemonade-sdk/lemonade#commit=hash"
-# "${pkgname}::git+https://github.com/sofiageo/lemonade#branch=fix/example"
 "httplib-${_httplibver}.tar.gz::https://github.com/yhirose/cpp-httplib/archive/refs/tags/v${_httplibver}.tar.gz"
 tmpfiles.conf
 )
